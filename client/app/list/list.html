@@ -1,0 +1,158 @@
+<template name="list">
+
+{{#if paid}}
+    <div class="row">
+        <div class="col-xs-4" style="text-align:center;">
+             <!-- <button id="saveTemplate" class="btn btn-primary btn-lg cta">Save It</button> -->
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <a href="/add"><button id="testTemplate" class="btn btn-primary btn-lg cta" href="/add">Add To My List</button></a>
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <!-- <button id="sendEmail" class="btn btn-primary btn-lg cta" data-toggle="modal" data-target="#myModal">Add One</button> -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <h1>My List</h1>
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+    <div id="table">{{> reactiveTable settings=settings}}</div>
+    <div id="send">Send</div>
+    {{> addModal}}
+    {{> importModal}}
+{{else}}
+        <div style="text-align:center; color:#505050;">
+            <h1> Looks like you haven't signed up for a plan yet.</h1>
+            <h4>You can set up all your templates and send test emails to yourself</h4>
+            <p>To upload a list and start tracking your path to getting repped, please go to the <a href="/plan">Plan</a> page</p>
+            <p>To send a test email, go to the <a href="/plan">Email</a> page and set up your template and attachments. Then, click 'Send It'.
+                <br>
+                This will send a test email to the email address you signed up with.
+            </p>
+        </div>
+{{/if}}
+</template>
+
+<template name="s3_tester">
+    <label class='uploadbtn' style="display:inline; width:100px;">
+        Upload a file... <input style="" type="file" class="file_bag hidden">
+    </label>
+
+    <button class="upload btn btn-primary btn-lg">Upload</button>
+
+    {{#each files}}
+        <p id="uploadedPercent">{{percent_uploaded}}</p>
+    {{/each}}
+</template>
+
+<template name="checkboxTemplate">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="cbtest" />
+            <label for="cbtest" class="check-box"></label>
+        </label>
+    </div>
+</template>
+
+<template name="numberTemplate">
+    {{count}}
+</template>
+
+<template name="saveTemplate">
+    <i id="save" class="ion-android-checkmark"></i>
+</template>
+
+<template name="deleteTemplate">
+    <p id="delete"><i class="ion-android-close"></i></p>
+</template>
+
+<template name="companyTemplate">
+    <input type="text" class="form-control" value="{{company}}">
+</template>
+<template name="emailTemplate">
+    {{#if paidTrue}}
+    <input type="text" class="form-control" data-email="{{email}}" value="{{email}}">
+    {{else}}
+    <input type="text" class="form-control" value="Hidden Until Paid">
+    {{/if}}
+</template>
+<template name="nameTemplate">
+    <input type="text" class="form-control" value="{{name}}">
+</template>
+<template name="addModal">
+    <!-- Button trigger modal -->
+    <!-- <button class="btn btn-primary btn-lg cta" data-toggle="modal" data-target="#myModal">
+        Add Row
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add One To Your List</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input id="newName" type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Email &nbsp;&nbsp;&nbsp;</span>
+                        <input id="newEmail" type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Company</span>
+                        <input type="text" id="newCompany" class="form-control" placeholder="Company">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="addNew" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="importModal">
+    <!-- Button trigger modal -->
+    <!-- <button class="btn btn-primary btn-lg cta" data-toggle="modal" data-target="#myModal">
+        Add Row
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Choose From Our Master List</h4>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="addNew" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="trackTemplate">
+    <select class="form-control" id="tracker{{count}}" value="{{track}}">
+        <option value="1" label="No Response" id="noResponse">No Response<p>No Response</p> </option>
+        <option value="2" label="Responded" id="responded">Responded</option>
+        <option value="3" id="saidNo">Said No</option>
+        <option value="4" id="submitLater">Submit Later</option>
+        <option value="5" id="meetingSet">Meeting Set</option>
+        <option value="6" id="repped">Reppped!</option>
+    </select>
+</template>

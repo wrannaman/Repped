@@ -1,0 +1,91 @@
+<template name="admin">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Total User Count: {{userCount}}</h1>
+        </div>
+    </div>
+{{> promoCodes}}
+    {{#if uploadedList}}
+        <h2>Need to upload a new list?</h2>
+        <button id="deleteList" class="btn btn-primary btn-lg">Delete List</button>
+    {{else}}
+        <div style="text-align:center;margin-top:-25px;margin-bottom:25px;">
+            <h1> Upload </h1>
+            <label></label>
+            {{> s3_tester2}}
+        </div>
+    {{/if}}
+
+    <div class="row"> 
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+            <input style="color:#505050;" type="text" id="whichList"> 
+        </div>
+        <div class="col-xs-4">
+        </div>
+        
+    </div>
+    <div id="table">{{> reactiveTable settings=settings}}</div>
+    <div id="send">Send</div>
+    
+
+</template>
+
+<template name="s3_tester2">
+    <label class='uploadbtn' style="display:inline; width:100px;">
+        Upload a file... <input style="" type="file" class="file_bag hidden">
+    </label>
+
+    <button class="upload btn btn-primary btn-lg">Upload</button>
+
+    {{#each files}}
+        <p id="uploadedPercent">{{percent_uploaded}}</p>
+    {{/each}}
+</template>
+
+<template name="checkboxTemplate2">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="cbtest" />
+            <label for="cbtest" class="check-box"></label>
+        </label>
+    </div>
+</template>
+
+<template name="numberTemplate2">
+    {{count}}
+</template>
+
+<template name="saveTemplate2">
+    <i id="save" class="ion-android-checkmark"></i>
+</template>
+
+<template name="deleteTemplate2">
+    <p id="delete"><i class="ion-android-close"></i></p>
+</template>
+
+<template name="companyTemplate2">
+    <input type="text" class="form-control" value="{{company}}">
+</template>
+<template name="emailTemplate2">
+    <input type="text" class="form-control" value="{{email}}">
+</template>
+<template name="nameTemplate2">
+    <input type="text" class="form-control" value="{{name}}">
+</template>
+<template name="emailTypeTemplate2">
+    <input type="text" class="form-control" value="{{emailType}}">
+</template>
+<template name="idTemplate2">
+    <input type="text" class="form-control" value="{{_id}}">
+</template>
+<template name="companyTypeTemplate2">
+    <input type="text" class="form-control" value="{{companyType}}">
+</template>
+<template name="promoCodes">
+<h2>Add Promo Code</h2>
+<input type="text" id="promoCode" style="color:#505050;">
+        <button id="addPromoCode" class="btn btn-primary btn-lg">Add Promo Code</button>
+</template>
+

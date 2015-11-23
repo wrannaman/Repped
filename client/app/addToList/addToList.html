@@ -1,0 +1,64 @@
+<template name="addToList">
+
+{{#if paid}}
+    <div class="row">
+        <div class="col-xs-4" style="text-align:center;">
+             <!-- <button id="saveTemplate" class="btn btn-primary btn-lg cta">Save It</button> -->
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <button id="backToList" class="btn btn-primary btn-lg cta">Back To My List</button>
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <!-- <button id="sendEmail" class="btn btn-primary btn-lg cta" data-toggle="modal" data-target="#myModal">Add One</button> -->
+        </div>
+    </div>
+
+    
+
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4" style="text-align:center;">
+            <h1>Master List</h1>
+
+        </div>
+        <div class="col-xs-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-6" style="text-align:center;">
+            <p style="color:#505050;">Click the row of the items you want to add to your list and they will automatically be imported. You will be able to import a certain number based on your plan. Email addresses will be unlocked after you import.</p>
+
+        </div>
+        <div class="col-xs-3">
+        </div>
+    </div>
+    <div id="table">{{> reactiveTable settings=settings}}</div>
+    <div id="send">Send</div>
+    {{> addModal}}
+    {{> importModal}}
+{{else}}
+        <div style="text-align:center; color:#505050;">
+            <h1> Looks like you haven't signed up for a plan yet.</h1>
+            <h4>You can set up all your templates and send test emails to yourself</h4>
+            <p>To upload a list and start tracking your path to getting repped, please go to the <a href="/plan">Plan</a> page</p>
+            <p>To send a test email, go to the <a href="/plan">Email</a> page and set up your template and attachments. Then, click 'Send It'.
+                <br>
+                This will send a test email to the email address you signed up with.
+            </p>
+        </div>
+{{/if}}
+</template>
+<template name="emailTemplateImport">
+    <p>Hidden</p>
+</template>
+<template name="checkboxTemplateImport">
+    <div>
+        <label>
+            <input type="checkbox"/>
+            <label></label>
+        </label>
+    </div>
+</template>

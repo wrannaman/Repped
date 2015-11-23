@@ -1,0 +1,17 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" sizes="16x16 32x32" href="/img/favicon.ico">
+</head>
+
+
+<template name="mainLayout">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- optional navbar yield -->
+    {{> yield region="navbar"}}
+</template>
+
+
+<template name="loading">
+    {{> spinner}}
+</template>
+

@@ -1,0 +1,83 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'stroke7pixeden';
+    src:url('/fonts/stroke7pixeden/stroke7pixeden.eot?u58ytb');
+    src:url('/fonts/stroke7pixeden/stroke7pixeden.eot?#iefixu58ytb') format('embedded-opentype'),
+    url('/fonts/stroke7pixeden/stroke7pixeden.woff?u58ytb') format('woff'),
+    url('/fonts/stroke7pixeden/stroke7pixeden.ttf?u58ytb') format('truetype'),
+    url('/fonts/stroke7pixeden/stroke7pixeden.svg?u58ytb#stroke7pixeden') format('svg');
+}
+
+.uploadbtn {
+    display: inline;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    overflow: visible;
+    border-radius: 5px;
+    padding: 9px 18px;
+    background-color: #666666;
+    text-decoration: none;
+    color: white;
+
+    &:hover, &:active, &:focus {
+        background-color: #505050;
+    }
+}
+.contentText {
+        text-align:center;
+        margin-top:-50px !important;
+}
+
+.plan-page {
+    color: #505050 !important;
+    
+    h1 {
+        color: #505050;
+    }
+    /* Content */
+    .content-wrap {
+        position: relative;
+    }
+    .content-wrap section {
+        display: none;
+        margin: 0 auto;
+        padding: 1em;
+        max-width: 1200px;
+        text-align: center;
+    }
+    .content-wrap section.content-current {
+        display: block;
+    }
+    .content-wrap section p {
+       color: #202020;
+    }
+    /* Fallback */
+    .no-js .content-wrap section {
+        display: block;
+        padding-bottom: 2em;
+        border-bottom: 1px solid rgba(255,255,255,0.6);
+    }
+    .no-flexbox nav ul {
+        display: block;
+    }
+    .no-flexbox nav ul li {
+        min-width: 15%;
+        display: inline-block;
+    }
+    @media screen and (max-width: 58em) {
+        .tabs nav a.icon span {
+            display: none;
+        }
+        .tabs nav a:before {
+            margin-right: 0;
+        }
+    }
+    @media screen and (max-width: 42em) {
+        .contentText {
+           margin-top:0px !important;
+        }
+    }
+}

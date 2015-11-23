@@ -1,0 +1,74 @@
+<template name="email">
+    <div class="container">
+    <div id="tabs" class="tabs"> 
+                <nav>
+                    <ul>
+                        <li id="T1"><a href="#section-1" class="icon-1"><span class="icon-1-white">Template </span></a></li>
+                        <li id="T2"><a href="#section-2" class="icon-2"><span>Template  </span></a></li>
+                        <li id="T3"><a href="#section-3" class="icon-3"><span>Template  </span></a></li>
+                        <li id="T4"><a href="#section-4" class="icon-4"><span>Template  </span></a></li>
+                    </ul>
+                </nav>
+                <div class="content">
+                    <section id="section-1">
+                        
+                    </section>
+                    <section id="section-2">
+                        
+                    </section>
+                    <section id="section-3">
+                        
+                    </section>
+                    <section id="section-4">
+                        
+                    </section>
+                </div><!-- /content -->
+            </div><!-- /tabs -->
+                <div style="margin-bottom:15px;margin-top:-20px;width:80%;margin-left:10%;">
+                <label>Subject:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="width:85%;float:right;outline:none;border:none;border-bottom: 1px dotted #505050;" id="subject" placeholder="Type you're subject here!" type="text">
+                </div>
+                <div style='color:#505050;width:80%;margin-left:10%;'>
+                    {{> froalaReactive key='mD6A6zlzH-9iiA11lE-13==' _onblur=doSave _value=myDoc.myHTMLField inlineMode=false minHeight=500 maxHeight=800 imageUpload=false crossDomain=true }}
+                </div>
+                <div class="bottomButtons" style="">
+                    <button id="saveTemplate" class="btn btn-primary btn-lg cta">Save It</button>
+                    <button id="testTemplate" class="btn btn-primary btn-lg cta">Test It</button>
+                    <button id="sendEmail" class="btn btn-primary btn-lg cta">Send It</button>
+                </div>
+    </div>
+
+
+<!--     <div class="container">
+        <section style="padding-top:0px;">
+            <div class="tabs tabs-style-linetriangle">
+                <nav>
+                    <ul>
+                        <li id="T1"><a href="#section-linetriangle-1"><span>Template 1</span></a></li>
+                        <li id="T2"><a href="#section-linetriangle-2"><span>Template 2</span></a></li>
+                        <li id="T3"><a href="#section-linetriangle-3"><span>Template 3</span></a></li>
+                        <li id="T4"><a href="#section-linetriangle-4"><span>Template 4</span></a></li>
+                    </ul>
+                </nav>
+                <div class="content-wrap">
+
+                </div>/content 
+            </div> /tabs 
+        </section>
+        <div style="margin-bottom:15px;">
+            <label>Subject:&nbsp;&nbsp;&nbsp;&nbsp;</label><input style="width:85%;float:right;outline:none;border:none;border-bottom: 1px dotted #505050;" id="subject" placeholder="Type you're subject here!" type="text">
+        </div>
+        <div style='color:#505050'>
+            {> froalaReactive _onblur=doSave _value=myDoc.myHTMLField inlineMode=false minHeight=500 maxHeight=800 imageUpload=false crossDomain=true }
+        </div>
+        <div>
+            <button id="saveTemplate" class="btn btn-primary btn-lg cta" style="width:26.5%">Save Template</button>
+            <button id="testTemplate" class="btn btn-primary btn-lg cta" style="width:26.5%">Test It!</button>
+            <button id="sendEmail" class="btn btn-primary btn-lg cta"  style="width:26.5%;">Send It!</button>
+        </div>
+    </div> /container --> 
+
+</template>
+
+
+
+

@@ -1,0 +1,66 @@
+<template name="settings">
+    <div class="container">
+        <div style="text-align:center">
+        <h2>When do you want to send your next email template?</h2>
+        <p>
+            Don't worry, we won't automatically send your next template, we're just going to send you a reminder to login and send it from the Email page.
+        </p>
+        </div>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="template" class="col-sm-2 control-label">Template:</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="template" style="">
+                        <option value="1" id="Template1">Template 1</option>
+                        <option value="2" id="Template2">Template 2</option>
+                        <option value="3" id="Template3">Template 3</option>
+                        <option value="4" id="Template4">Template 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-sm-2 control-label">Date</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" id="date" placeholder="Date">
+                </div>
+            </div>
+        </form>
+        <button id="saveSettings" class="btn btn-primary btn-lg cta" style="width:90.5%;text-align:center;">Remind Me</button>
+    </div><!-- /container -->
+
+    {{#if reminders}}
+    <div class="row" style="text-align:center;margin-top:50px;">
+        <div class="col-xs-12" >
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-3">
+            Template Number:
+            </div>
+            <div class="col-xs-3">
+            Reminder Date:
+            </div>
+            <div class="col-xs-3">
+            </div>
+        </div>
+        {{#each reminders}}
+        <div class="col-xs-12" >
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-3" style="border-bottom: #505050 solid thin;">
+            {{template}}
+            </div>
+            <div class="col-xs-3" style="border-bottom: #505050 solid thin;">
+            {{reminderDate}} @ 4:00PM
+            </div>
+            <div class="col-xs-3">
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</template>
+
+
+
+
+

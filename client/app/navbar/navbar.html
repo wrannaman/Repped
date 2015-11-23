@@ -1,0 +1,40 @@
+<template name="navbar">
+    <div class="navbar" style="height:100%; min-height:500px;font-size:15px;">
+        <div id="st-container" class="st-container">
+            <nav class="st-menu st-effect-2" id="menu-2">
+                <h2 style="color:#fff;">Repped</h2>
+                <ul>
+                    <li><a class="icon icon-clip" href="/attachments" id="">Attachments</a></li>
+                    <li><a class="icon icon-paperplane" href="/email">Email</a></li>
+                    <li><a class="icon icon-settings" href="/list">List</a></li>
+                    <li><a class="icon icon-params" href="/settings">Settings</a></li>
+                    <li><a class="icon icon-banknote" href="/plan">Plan</a></li>
+                    <li><a class="icon icon-bulb" href="/faq">FAQ</a></li>
+                    <li><a class="icon icon-fire" id="goHome" href="/">Logout</a></li>
+                </ul>
+            </nav>
+            <!-- content push wrapper -->
+            <div class="st-pusher" style="background-color:#fff;">
+                <div class="st-content"><!-- this is the wrapper for the content -->
+                    <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+                        <!-- Top Navigation -->
+                        <div class="main clearfix">
+                            <div id="st-trigger-effects" class="column">
+                                <button class="noButton" data-effect="st-effect-2"><img src="/img/menu_icon.png"></button>
+                            </div>
+                        </div><!-- /main -->
+                        <div class="{{currentRouteName}}-page">
+                            {{> yield}}
+                        </div>
+                    </div><!-- /st-content-inner -->
+                </div><!-- /st-content -->
+            </div><!-- /st-pusher -->
+        </div><!-- /st-container -->
+    </div>
+    {{> notifications}}
+</template>
+
+
+
+
+

@@ -1,0 +1,21 @@
+<template name="signup">
+    <form id="signup-form" class="mfp-hide white-popup-block zoom-anim-dialog user-form">
+        <h2>Sign up for an account</h2>
+        <a href="#" class="btn facebook" id="registerWithFacebook">Sign up with Facebook</a>
+        <!--<a href="#" class="btn twitter">Sign up with Twitter</a>-->
+        <!--<a href="#" class="btn google">Sign up with Google+</a>-->
+
+        <div class="divider"><span class="dashed-line"></span>or<span class="dashed-line"></span></div>
+
+        <input type="text" name="name" class="name" id="registerName" maxlength="50" pattern="^.+$" required placeholder="Enter your full name" />
+
+        <input type="email" name="email" class="email" id="registerEmail" placeholder="Enter your email" maxlength="320" pattern="^[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required />
+
+        <input type="password" placeholder="Enter your password" id="registerPassword" class="password" title="Can contain any character. The length may vary between seven and hundred characters" maxlength="100" pattern=".{7,100}" required />
+
+        <input type="submit" class="submit btn cta" value="Sign up" />
+
+        <div class="form-text">By clicking 'Sign up' you agree to the our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</div>
+
+    </form>
+</template>

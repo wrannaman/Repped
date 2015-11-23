@@ -1,0 +1,46 @@
+<template name="attachments">
+    <div class="container">
+        <div style="text-align:center">
+            <h3 style=""> Attachments </h3>
+            {{> s3_tester3}}
+            <ul class="list-inline" style="margin-left: 20%;">
+                {{#each attachments}}
+                <li style="color:#505050; width:200px; height:200px;float: left;">{{attachment_name}}  <span id="delete" class="ion-close-round"></span>  <br>
+                    <div>
+                        {{{html}}}
+                    </div>
+                </li>
+            {{/each}}
+            </ul>
+        </div>
+    </div><!-- /container -->
+
+</template>
+
+<template name="s3_tester3">
+    <div class="row" style="margin-top:25px;">
+        <div class="col-xs-12">
+            <div class="col-xs-4">
+            </div>
+            <div class="col-xs-4">
+            <label class='btn btn-primary btn-lg cta' style="">
+                Select a file... <input style="" type="file" class="file_bag hidden">
+            </label>
+            </div>
+            <div class="col-xs-4">
+            </div>
+        </div>
+    </div>
+    <!-- <label class='btn btn-primary btn-lg cta' style="display:inline; width:100px; height:45px; margin-right:15px;">
+        Select a file... <input style="" type="file" class="file_bag hidden">
+    </label>
+
+    <button id="uploadButton" class="upload btn btn-primary btn-lg cta">Upload</button> -->
+
+    {{#each files}}
+        <p id="uploadedPercent">{{percent_uploaded}}</p>
+    {{/each}}
+</template>
+
+
+

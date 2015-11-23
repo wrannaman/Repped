@@ -1,0 +1,80 @@
+<template name="plan">
+    <div class="container">
+        {{#if paid}}
+        <div style="text-align:center">
+            <h1> You're all set!</h1>
+            <h4>You've paid for plan {{number}}</h4>
+            <p> ${{cost}}</p>
+            <p> {{submissions}} Electronic Submissions</p>
+            <p> 4 Templates</p>
+            <p> {{total}} Electronic Submissions </p>
+            <p>If you need to upgrade, please contact support at andrewpierno@gmail.com</p>
+        </div>
+        {{else}}
+        <div class="contentText">
+            <h2>Which plan do you want to sign up for?</h2>
+            <p>This is not a recurring payment. It's one time only for all the templates and submissions</p>
+            <h4 style="color:#505050;">Plan {{number}}</h4>
+            <p> ${{cost}}</p>
+            <p> {{submissions}} Electronic Submissions</p>
+            <p> 4 Templates</p>
+            <p> {{total}} Electronic Submissions </p>
+        </div>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="template" class="col-sm-2 control-label">Template:</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="plan" style="">
+                        <option value="1" id="Plan1">Plan 1 | $25 | 100 Submissions | 4 Templates</option>
+                        <option value="2" id="Plan2">Plan 2 | $35 | 200 Submissions | 4 Templates</option>
+                        <option value="3" id="Plan3">Plan 3 | $50 | 400 Submissions | 4 Templates</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-sm-2 control-label">Card Number:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ccNum" placeholder="Card Number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-sm-2 control-label">Card Expiration Month:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ccExpMo" placeholder="Card Expiration Month">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-sm-2 control-label">Card Expiration Year:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ccExpYr" placeholder="Card Expiration Year">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="col-sm-2 control-label">Card Security Code:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ccCvc" placeholder="Card CVC">
+                </div>
+            </div>
+        </form>
+        <button id="saveSettings" class="btn btn-primary btn-lg cta" style="width:90.5%;text-align:center;">Let's Do This</button>
+
+        <div>
+            <h3 style="text-align:center;">Got a  promo code? Luck you! Enter it below.</h3>
+            <form id="promoForm" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="date" class="col-sm-2 control-label">Promo Code:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="promoCode" placeholder="Promo Code">
+                    </div>
+                </div>
+            </form>
+            <button id="promoCodeButton" class="btn btn-primary btn-lg cta" style="width:90.5%;text-align:center;">Submit Promo Code</button>
+        </div>
+        {{/if}}
+    </div><!-- /container -->
+</template>
+
+
+
+
+
